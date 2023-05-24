@@ -28,7 +28,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     #nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
   - host: emailbuddy.matheplus.ninja

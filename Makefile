@@ -1,7 +1,7 @@
 TARGET_IMAGE_NAME = frontend
 PROJECT_SCOPE = emailbuddy
 COMMIT_HASH = $(shell git rev-parse --short HEAD)
-TARGET_DOCKER_REGISTRY = registry.matheplus.ninja:80
+TARGET_DOCKER_REGISTRY = registry.matheplus.ninja
 version ?= $(COMMIT_HASH)
 
 DOCKER_LOGIN = $(shell aws ecr get-login --no-include-email --region eu-central-1)

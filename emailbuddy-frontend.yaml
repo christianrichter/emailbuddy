@@ -1,17 +1,27 @@
 ---
-kind: Pod
-apiVersion: v1
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: emailbuddy
   labels:
     app: emailbuddy
 spec:
-  containers:
-    - name: emailbuddy
-      image: registry.matheplus.ninja/emailbuddy/frontend:latest
+  replicas: 2
+  selector:
+    matchLabels:
+      app: emailbuddy
+  template:
+    metadata:
+      name: emailbuddy
+      labels:
+        app: emailbuddy
+    spec:
+      containers:
+        - name: emailbuddy
+          image: registry.matheplus.ninja/emailbuddy/frontend:latest
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: emailbuddy
 spec:
